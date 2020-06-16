@@ -1,0 +1,6 @@
+github.com/rz1226/blackboardkit v1.0.0 h1:/epWpE3nZBs4t9gWwqjIp9+fHdJvj3YzZwsF7eiUOSY=
+github.com/rz1226/blackboardkit v1.0.0/go.mod h1:qraY3XeNBj63j+n36p07n01wdrxR9/bIxSUN9KxLUdA=
+github.com/rz1226/kits v1.0.0 h1:G+NRV8rQ8IACAXrb8R+DYvWN5DFO1/fwzQ4onxYa/SA=
+github.com/rz1226/kits v1.0.0/go.mod h1:0VLesDU5pKg72JHu/ghcuDB2RYDXJN+40dYTO6uJVK4=
+github.com/rz1226/serverkit v1.0.0 h1:dZuVIg8N0uaHvwA8DlDtoJqs6ikITjSqc+j4ovOYFCk=
+github.com/rz1226/serverkit v1.0.0/go.mod h1:jZ9dIye7VC6UvTcn5cc7w/HKjBP+4cXLFq4trgRT1F4=
