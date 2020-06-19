@@ -59,25 +59,23 @@ func (hc *HTTPClient) Post(urlStr, body string) (string, error) {
 	return string(content), nil
 }
 
-
 func (hc *HTTPClient) Post2(url string, bodyType string, body io.Reader) (string, error) {
-	t := hc.bb.Start( "http post2: "+url)
+	t := hc.bb.Start("http post2: " + url)
 	res, err := hc.client.Post(url, bodyType, body)
 	hc.bb.End(t)
 	if err != nil {
-		hc.bb.Err( "http post error: url="+url, "err=",err)
+		hc.bb.Err("http post error: url="+url, "err=", err)
 		return "", err
 	}
 	defer res.Body.Close()
 	content, err := ioutil.ReadAll(res.Body)
 	if err != nil {
-		hc.bb.Err( "http post read error: url="+url, "err=",err)
+		hc.bb.Err("http post read error: url="+url, "err=", err)
 		return "", err
 	}
-	hc.bb.Log( "http post2 result:"+url, " resp: "+string(content))
+	hc.bb.Log("http post2 result:"+url, " resp: "+string(content))
 	return string(content), nil
 }
-
 
 func (hc *HTTPClient) PostForm(urlStr string, data url.Values) (string, error) {
 	t := hc.bb.Start("http post: " + urlStr)
@@ -115,9 +113,8 @@ func (hc *HTTPClient) Get(urlStr string) (string, error) {
 	return string(body), nil
 }
 
-
 //copy request.Body
-func copyBody(r *http.Request) (string , error) {
+func copyBody(r *http.Request) (string, error) {
 	if r.Body != nil {
 		bodyBytes, err := ioutil.ReadAll(r.Body)
 		// 把刚刚读出来的再写进去
@@ -127,10 +124,9 @@ func copyBody(r *http.Request) (string , error) {
 	return "", errors.New("empty body")
 }
 
-
 func (hc *HTTPClient) Do(req *http.Request) (string, error) {
 	// 复制body ,日志用
-	bodyForLog, err := copyBody( req )
+	bodyForLog, err := copyBody(req)
 	if err != nil {
 		bodyForLog = ""
 	}
